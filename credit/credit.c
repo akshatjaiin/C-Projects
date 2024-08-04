@@ -1,4 +1,3 @@
-#include <cs50.h>
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -63,5 +62,26 @@ bool checksum(int long long n, int count)
 
 void printcard(int long long n, int count)
 {
-    //todo
+    for (int i = 1; i < count-1; i++)
+    {
+        n /= 10;
+    }
+
+    if ((n == 34 || n == 37) && count == 15)
+    {
+        printf("AMEX\n");
+    }
+    else if(n >= 51 && n <= 55  && count == 16)
+    {
+        printf("MASTERCARD\n");
+    }
+    else if ((n == 4 || n/10 == 4) && (count == 13 || count == 16))
+    {
+        printf("VISA\n");
+    }
+    else
+    {
+        printf("INVALID\n");
+    }
+
 }
