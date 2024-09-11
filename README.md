@@ -1,77 +1,153 @@
-# 📱 QR Code Generator in C
+# C Programs Collection
 
-This project is a simple C program that generates a QR code from a given URL or string and saves it as a PBM (Portable Bitmap) image file. PBM is a simple format for black-and-white images, making it easy to store and view QR codes.
+This repository contains multiple C programs, each demonstrating a different functionality. Below is a summary of the available programs and how to run them.
 
-## 🛠️ How It Works
+## Table of Contents
 
-- The program uses the `libqrencode` library to encode the input data as a QR code.
-- The generated QR code is saved in the PBM format, which can be easily viewed with image viewers that support this format.
-- The program is designed to handle basic error correction and customization of the QR code.
+- [Basic Calculator](#basic-calculator)
+- [Fake Blue Screen of Death](#fake-blue-screen-of-death)
+- [Bouncing Ball Animation](#bouncing-ball-animation)
+- [Library Management System](#library-management-system)
+- [QR Code Generator](#qr-code-generator)
+- [Installation](#installation)
+- [System Requirements](#system-requirements)
+- [License](#license)
 
-## 📋 Requirements
+## Basic Calculator
 
-- C compiler (e.g., `gcc`)
-- `libqrencode` library
+### Description
+This program implements a basic text-based calculator. It allows the user to perform addition, subtraction, multiplication, and division.
 
-### Installing `libqrencode`
+### Usage
 
-On Debian-based systems (like Ubuntu), you can install the library using:
-
-```bash
-sudo apt-get install libqrencode-dev
-On Red Hat-based systems (like Fedora), use:
-
-bash
-Copy code
-sudo dnf install qrencode-devel
-🚀 Getting Started
-Clone the repository or download the source code:
+1. Compile the program:
+   ```bash
+   gcc basic_calculator.c -o calculator
+Run the program:
 
 bash
 Copy code
-git clone https://github.com/your-username/qr-code-generator-c.git
-cd qr-code-generator-c
+./calculator
+Choose an operation from the menu:
+
+1: Add
+2: Subtract
+3: Multiply
+4: Divide
+5: Exit the program
+Features
+Supports basic arithmetic operations.
+Error handling for invalid choices and division by zero.
+Fake Blue Screen of Death
+Description
+This program simulates a "Blue Screen of Death" (BSOD) for educational or fun purposes. It changes the console color and displays a fake error message.
+
+Usage
 Compile the program:
 
 bash
 Copy code
-gcc -o qr_code_generator main.c -lqrencode
-Run the program to generate the QR code:
+gcc fake_bsod.c -o bsod
+Run the program:
 
 bash
 Copy code
-./qr_code_generator
-The QR code image will be saved as qrcode.pbm in the current directory.
+./bsod
+Press any key to close the program.
 
-✨ Features
-Generates QR codes for any URL or string.
-Simple output format (PBM) for easy viewing.
-Uses error correction (level L) to improve scan reliability.
-Customizable input data and QR code encoding options.
-🛠️ Customization
-Input Data: Change the data variable in the main.c file to encode different URLs or text.
+Bouncing Ball Animation
+Description
+This program displays a bouncing ball animation in the console. The ball moves within the defined console boundaries and bounces when it hits the edges.
 
-c
+Usage
+Compile the program:
+
+bash
 Copy code
-const char *data = "https://www.example.com";
-Error Correction Level: Modify the QR_ECLEVEL_L parameter in the QRcode_encodeString function to use different error correction levels (L, M, Q, H).
+gcc bouncing_ball.c -o ball
+Run the program:
 
-Output Format: The program currently outputs in PBM format, but you can modify the code to use other formats if needed.
-
-📂 Project Structure
-plaintext
+bash
 Copy code
-qr-code-generator-c/
-│
-├── main.c              # The main source file
-└── README.md           # Project documentation
-🤝 Contributing
-Contributions are welcome! If you have ideas for improvements or new features, feel free to fork the repository, make changes, and submit a pull request.
+./ball
+Features
+Ball moves with collision detection against walls.
+Simple terminal animation using ASCII characters.
+Library Management System
+Description
+This is a simple library management system that allows users to add, display, search, and delete books in a virtual library.
 
-📜 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+Usage
+Compile the program:
 
-🙏 Acknowledgments
-Thanks to the creators of libqrencode for providing a powerful and easy-to-use QR code generation library.
+bash
+Copy code
+gcc library_management.c -o library
+Run the program:
 
+bash
+Copy code
+./library
+Choose from the menu:
 
+1: Add Book
+2: Display Books
+3: Search Book by ID
+4: Delete Book by ID
+5: Exit the program
+Features
+Add and store book details (ID, title, author).
+Search and delete books by their ID.
+Display all books in the library.
+QR Code Generator
+Description
+This program generates a QR code from a given URL or text and saves it in a PBM (Portable Bitmap) format.
+
+Usage
+Install the necessary library for QR code generation:
+
+bash
+Copy code
+sudo apt-get install libqrencode-dev
+Compile the program:
+
+bash
+Copy code
+gcc qr_code_generator.c -lqrencode -o qrcode
+Run the program:
+
+bash
+Copy code
+./qrcode
+The program will generate a QR code and save it as qrcode.pbm. You can view it using any image viewer that supports PBM files.
+
+Features
+Generates a QR code for a given URL or string.
+Saves the QR code in PBM format.
+Installation
+To compile and run the programs:
+
+Make sure you have gcc installed. If not, install it using:
+
+bash
+```
+sudo apt install gcc
+Compile each program using gcc. Example:
+```
+bash
+```
+gcc program_name.c -o program_name
+Run the compiled binary:
+```
+bash
+```
+./program_nam
+```
+System Requirements
+Operating System: Linux or any Unix-like environment (e.g., macOS). Windows users may need a C compiler like MinGW or WSL (Windows Subsystem for Linux).
+C Compiler: GCC or any C compiler.
+Additional Libraries:
+libqrencode for the QR code generator.
+![image](https://github.com/user-attachments/assets/7afaff3f-4e3c-4504-b852-a143d9b21051)
+![image](https://github.com/user-attachments/assets/04448c82-6be3-4e86-a816-52e1b4e12144)
+![image](https://github.com/user-attachments/assets/b3d92618-a26d-4f80-9054-4dad2bbe67f1)
